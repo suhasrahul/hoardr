@@ -152,8 +152,10 @@ SQLite, `wants.json`, simulated claims).
   "unknown", not "bad".
 - 🧠 **A raccoon that learns your eye** — tap three cards you'd grab and watch
   the next scan reshuffle, with Cognee building a real taste profile over time.
-- 📬 **Real claims** — send the "still available?" message through the
-  listing site, still behind your one-tap approval.
+- 📬 **Contacting the seller for you** — in the future, HOARDR will reach out
+  to the seller or giver directly to claim or buy the item: it sends the
+  "still available?" message through the listing site, handles the reply,
+  and lines up the pickup — always behind your one-tap approval.
 - 🔔 **Pings, not polling** — scheduled scans in the background and a push
   notification only when a true keeper shows up.
 - 🗺️ **Worth-the-trip math** — pickup distance, travel time and "needs a truck"
