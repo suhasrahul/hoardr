@@ -1,0 +1,42 @@
+{
+  "name": "hoardr",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "description": "Personal agent that judges free-stuff listings and surfaces only what's worth the trip",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "snapshot": "node scripts/pullSnapshot.ts",
+    "ingest": "node lib/ingest/replay.ts",
+    "pipeline": "node lib/pipeline.ts",
+    "probe": "node scripts/probe.ts",
+    "sample": "node scripts/sample.ts"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "dependencies": {
+    "@vercel/blob": "^2.9.0",
+    "ai": "^7.0.174",
+    "motion": "^14.10.1",
+    "next": "16.4.6",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "sharp": "^0.35.5",
+    "singlestore-nodejs": "^1.0.1",
+    "workflow": "^5.7.0",
+    "zod": "^4.1.11"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "babel-plugin-react-compiler": "1.0.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.6",
+    "typescript": "^5"
+  }
+}

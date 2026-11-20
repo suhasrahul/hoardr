@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "descriptor_sha256": "<printed by firedrill register>",
+  "roots": [
+    {
+      "alias": "app",
+      "path": "/absolute/path/to/hoardr",
+      "identity_sha256": "b221a6a7b6fd968cff838aa706e43b3447b5bddb83bae9102a75fd1109c5f4f7"
+    }
+  ],
+  "services": [
+    {
+      "alias": "web",
+      "root_alias": "app",
+      "mode": "launch",
+      "command": { "executable": "node", "args": ["node_modules/next/dist/bin/next", "dev"] },
+      "cwd": ".",
+      "env_passthrough": ["PATH", "HOME", "USER", "SHELL", "LANG", "TMPDIR"],
+      "env_static": {},
+      "local_secret_env": [],
+      "readiness": { "kind": "http", "url": "http://127.0.0.1:0/api/drill", "expect_status": [200, 405] },
+      "readiness_timeout_ms": 120000,
+      "stop_timeout_ms": 5000,
+      "per_drill": true,
+      "port_env": "PORT",
+      "dependency_env": [
+        { "alias": "giver", "name": "GIVER_INVOKE_URL", "url": "invoke" }
+      ]
+    }
+  ],
+  "driver": {
+    "profile": "http.v1",
+    "service_alias": "web",
+    "path": "/api/drill",
+    "method": "POST",
+    "stream": "none",
+    "session_header": null,
+    "request_template": "message-text",
+    "response_pointer": "/reply"
+  },
+  "state_hooks": [],
+  "max_parallel_drills": 1
+}

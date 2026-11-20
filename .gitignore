@@ -1,0 +1,23 @@
+node_modules/
+
+# .env is committed for the private hackathon repo — rotate before going public
+data/*.db
+.DS_Store
+*.code-workspace
+
+# next.js
+.next/
+next-env.d.ts
+/.swc
+.vercel
+.env*
+
+# TypeScript incremental build cache
+tsconfig.tsbuildinfo
+
+# Firedrill local plan — contains absolute paths, never commit
+firedrill/plan.json
+
+# Firedrill tool upload archives (build artifact)
+firedrill/*.zip
+!.env.example

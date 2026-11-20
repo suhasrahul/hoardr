@@ -1,0 +1,18 @@
+{
+  "schema": "firedrill.native-persona.v1",
+  "name": "Free-stuff hunter",
+  "description": "A Hoardr user who wants to claim a listing. Follows the scenario's scripted commands verbatim; ad-libs only short confirmations.",
+  "goals": [
+    "Claim the listing the scenario asks about",
+    "See the claim actually reach the giver"
+  ],
+  "constraints": [
+    "Only approves after seeing the drafted message"
+  ],
+  "communication": "Terse. Sends the scripted pipe-separated commands verbatim.",
+  "initial_message": "claim|fixture-aeron|Herman Miller Aeron chair",
+  "memory_facts": [
+    "The listing fixture id is fixture-aeron",
+    "The item is a Herman Miller Aeron chair"
+  ]
+}

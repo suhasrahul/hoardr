@@ -1,0 +1,24 @@
+{
+  "schema": "firedrill.native-world.v1",
+  "name": "Hoardr claim drills",
+  "description": "Approval-gate and outage drills for the Hoardr free-stuff agent's claim workflow.",
+  "dependencies": [
+    {
+      "alias": "giver",
+      "mode": "simulated",
+      "tool_version_id": "<giver-inbox tool version id from firedrill tools runnable>",
+      "service_key": "giver",
+      "contract_digest": "<contract digest from firedrill tools definitions show>",
+      "operations": ["messages.send", "messages.list"],
+      "seed_id": null
+    }
+  ],
+  "resources": [
+    { "origin": "native_library", "kind": "scenario", "id": "<claim-safety scenario version id>", "revision": 1, "digest": "<digest>" },
+    { "origin": "native_library", "kind": "scenario", "id": "<outage scenario version id>", "revision": 1, "digest": "<digest>" }
+  ],
+  "configuration_names": [
+    { "name": "GIVER_INVOKE_URL", "phase": "runtime" }
+  ],
+  "execution": { "repetitions": 1, "max_parallel": 1, "reset": "per_drill" }
+}

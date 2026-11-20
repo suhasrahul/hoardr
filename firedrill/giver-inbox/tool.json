@@ -1,0 +1,105 @@
+{
+  "schema": "firedrill.tool-package.v1",
+  "key": "giver-inbox",
+  "version": "0.1.0",
+  "name": "Giver Inbox",
+  "description": "Synthetic inbox of a free-stuff listing giver. Models the single seam Hoardr's claim workflow crosses after user approval: messages.send. Sends are deduplicated per listing so a repeated approval can never double-send; availability.set models the outage that must drive the agent into its simulated fallback.",
+  "services": [
+    {
+      "key": "giver",
+      "name": "Giver inbox",
+      "surface": null,
+      "operations": [
+        {
+          "name": "messages.send",
+          "description": "Send a claim message to the listing giver. Deduplicated per listingId: a repeat send returns the original message with duplicate=true.",
+          "effect": "write",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "listingId": { "type": "string", "minLength": 1, "maxLength": 120 },
+              "body": { "type": "string", "minLength": 1, "maxLength": 2000 }
+            },
+            "required": ["listingId", "body"],
+            "additionalProperties": false
+          },
+          "output_schema": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "listingId": { "type": "string" },
+              "status": { "type": "string", "enum": ["sent"] },
+              "duplicate": { "type": "boolean" }
+            },
+            "required": ["id", "listingId", "status", "duplicate"]
+          },
+          "transport": { "kind": "http", "capability": "invoke" }
+        },
+        {
+          "name": "messages.list",
+          "description": "List sent messages in stable order; drill assertions read this to prove exactly-once sends.",
+          "effect": "read",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "afterId": { "type": "string" },
+              "limit": { "type": "integer", "minimum": 1, "maximum": 100 }
+            },
+            "additionalProperties": false
+          },
+          "output_schema": {
+            "type": "object",
+            "properties": {
+              "items": { "type": "array" },
+              "nextCursor": { "type": ["string", "null"] }
+            },
+            "required": ["items", "nextCursor"]
+          },
+          "transport": { "kind": "http", "capability": "invoke" }
+        },
+        {
+          "name": "messages.get",
+          "description": "Read one sent message by id; unknown ids return NOT_FOUND.",
+          "effect": "read",
+          "input_schema": {
+            "type": "object",
+            "properties": { "id": { "type": "string", "minLength": 1 } },
+            "required": ["id"],
+            "additionalProperties": false
+          },
+          "output_schema": { "type": "object" },
+          "transport": { "kind": "http", "capability": "invoke" }
+        },
+        {
+          "name": "availability.set",
+          "description": "Drill control: turn the inbox on or off. While off, messages.send fails with UNAVAILABLE.",
+          "effect": "write",
+          "input_schema": {
+            "type": "object",
+            "properties": { "available": { "type": "boolean" } },
+            "required": ["available"],
+            "additionalProperties": false
+          },
+          "output_schema": {
+            "type": "object",
+            "properties": { "available": { "type": "boolean" } },
+            "required": ["available"]
+          },
+          "transport": { "kind": "http", "capability": "invoke" }
+        },
+        {
+          "name": "availability.get",
+          "description": "Read the availability flag (defaults to true).",
+          "effect": "read",
+          "input_schema": { "type": "object", "properties": {}, "additionalProperties": false },
+          "output_schema": {
+            "type": "object",
+            "properties": { "available": { "type": "boolean" } },
+            "required": ["available"]
+          },
+          "transport": { "kind": "http", "capability": "invoke" }
+        }
+      ]
+    }
+  ]
+}

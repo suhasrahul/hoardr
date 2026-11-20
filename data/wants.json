@@ -1,0 +1,12 @@
+{
+  "wants": [
+    "vintage lamps and lighting",
+    "solid wood furniture",
+    "espresso / coffee gear",
+    "camp and bike gear",
+    "vinyl records"
+  ],
+  "vetoes": ["mattress", "crib", "car seat", "particle board"],
+  "maxPickupMiles": 8,
+  "swipes": []
+}

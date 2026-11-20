@@ -1,0 +1,264 @@
+:root {
+  --paper: #fff8ec;
+  --card: #ffffff;
+  --ink: #1b1b1b;
+  --coral: #ff6b57;
+  --mint: #5ce1a0;
+  --banana: #ffd23f;
+  --sky: #6ec6ff;
+  --grape: #b8a9ff;
+  --muted: #9a917f;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--sky);
+  outline-offset: 3px;
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+@keyframes pop-in {
+  0% {
+    transform: scale(0.6) rotate(-6deg);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.05) rotate(1deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes stamp-slam {
+  0% {
+    transform: scale(2.6) rotate(-18deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) rotate(-8deg);
+    opacity: 1;
+  }
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+/* shimmer sweep across the hot seat while the goblin thinks */
+@keyframes sniff {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(320%);
+  }
+}
+
+/* the throws — card enters its pile flying in from the hot seat */
+@keyframes arrive-toss {
+  0% {
+    transform: translateX(34vw) translateY(-14vh) rotate(14deg);
+  }
+  100% {
+    transform: translateX(0) translateY(0) rotate(var(--tilt, 0deg));
+  }
+}
+
+@keyframes arrive-flick {
+  0% {
+    transform: translateX(28vw) translateY(-8vh) rotate(8deg);
+  }
+  100% {
+    transform: translateX(0) translateY(0) rotate(var(--tilt, 0deg));
+  }
+}
+
+@keyframes arrive-glide {
+  0% {
+    transform: translateX(-34vw) translateY(-10vh) rotate(-12deg);
+  }
+  100% {
+    transform: translateX(0) translateY(0) rotate(var(--tilt, 0deg));
+  }
+}
+
+@keyframes arrive-tuck {
+  0% {
+    transform: translateY(-30vh) rotate(0deg);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(0) rotate(var(--tilt, 0deg));
+    opacity: 1;
+  }
+}
+
+@keyframes strip-tick {
+  0% {
+    transform: scaleY(0.2);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes confetti-fly {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-90px) translateX(var(--dx, 0px)) rotate(200deg);
+    opacity: 0;
+  }
+}
+
+/* goblin + table life */
+@keyframes goblin-dig {
+  0%,
+  100% {
+    transform: rotate(-9deg);
+  }
+  50% {
+    transform: rotate(9deg);
+  }
+}
+
+@keyframes goblin-hop {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-18px) rotate(-8deg);
+  }
+}
+
+@keyframes deck-jiggle {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-2.5deg);
+  }
+  75% {
+    transform: rotate(2.5deg);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-4px);
+  }
+  75% {
+    transform: translateX(4px);
+  }
+}
+
+@keyframes poof {
+  0% {
+    opacity: 0.95;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.7) translateY(-10px);
+  }
+}
+
+@keyframes badge-spin {
+  0% {
+    transform: rotate(160deg) scale(0.4);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(-6deg) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes keeper-toast {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.8);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-26px);
+  }
+}
+
+@keyframes mascot-idle {
+  0%, 100% {
+    transform: rotate(-6deg);
+  }
+  50% {
+    transform: rotate(-1deg) translateY(-2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

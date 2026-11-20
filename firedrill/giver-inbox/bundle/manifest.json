@@ -1,0 +1,11 @@
+{
+  "schema": "firedrill.tool-bundle.v1",
+  "processes": [
+    {
+      "kind": "source",
+      "working_directory": "app",
+      "command": { "executable": "node", "args": ["server.mjs"] },
+      "port_env": "PORT"
+    }
+  ]
+}

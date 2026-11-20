@@ -1,0 +1,23 @@
+{
+  "schema": "firedrill.native-scenario.v3",
+  "name": "Giver inbox outage falls back to simulated claim",
+  "description": "The giver dependency goes offline before approval; the claim must still complete, labelled simulated, with nothing recorded in the inbox.",
+  "instruction": "Start a claim for the fixture listing, then approve it. The giver inbox is offline: the claim should still be recorded, simulated.",
+  "target_input": null,
+  "personas": [
+    { "origin": "native_library", "kind": "persona", "id": "<persona version id>", "revision": 1, "digest": "<digest>" }
+  ],
+  "evaluations": [
+    { "origin": "native_library", "kind": "evaluation", "id": "<outage evaluation version id>", "revision": 1, "digest": "<digest>" }
+  ],
+  "conditions": [],
+  "events": [
+    { "kind": "dependency_unavailable", "after_turn": 1, "dependency": "giver", "message": null },
+    { "kind": "user_message", "after_turn": 2, "dependency": null, "message": "approve|fixture-dyson" },
+    { "kind": "dependency_restored", "after_turn": 3, "dependency": "giver", "message": null }
+  ],
+  "max_turns": 6,
+  "stop_rules": [
+    "Stop once the claim outcome has been reported after the outage."
+  ]
+}

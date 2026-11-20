@@ -1,0 +1,912 @@
+[
+  {
+    "note": "CALIBRATION BASELINE — obvious treasure, everything should agree",
+    "listing": {
+      "id": "p:aeron",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "Herman Miller Aeron chair — curb alert",
+      "body": "Moving today and can't take it. Herman Miller Aeron size B, fully adjustable, no tears in the mesh, all levers work. On the curb in front of 2410 College Ave — first come first served, will delete post when gone.",
+      "hood": "Elmwood",
+      "town": "Berkeley",
+      "postedAt": "2026-11-20T08:00",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T3": ">0.6",
+      "T5": ">0.6",
+      "T6": ">0.7",
+      "T8": ">0.6",
+      "T12": "<0.3",
+      "verdict": "PUSH"
+    }
+  },
+  {
+    "note": "SCAM PIN — 'just pay shipping' must clear the 0.9 veto bar",
+    "listing": {
+      "id": "p:shipscam",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "FREE brand new iPhone 15 Pro!!! Still sealed",
+      "body": "Upgraded to the 17 so giving this away FREE!! Just cover the $25 shipping fee and it's yours. Send me your address and payment info, ships today!!",
+      "hood": "Downtown",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T08:05",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T2": ">0.9",
+      "verdict": "REJECT"
+    }
+  },
+  {
+    "note": "MASQUERADE — marked OFFER but the body is a wanted post; only T1 can catch it",
+    "listing": {
+      "id": "p:iso-offer",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "Boxes for moving",
+      "body": "Hi neighbors, I'm moving next week and looking for any spare moving boxes or packing paper. Happy to pick up anytime, thanks!",
+      "hood": "Rockridge",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T08:10",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T1": "<0.35",
+      "verdict": "REJECT"
+    }
+  },
+  {
+    "note": "HONEST FLAW — cat dander is not bedbugs; T9 should reward disclosure, T12 should stay sub-veto",
+    "listing": {
+      "id": "p:catsofa",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "IKEA sofa, good bones — honest disclosures",
+      "body": "Soderhamn sofa, about 4 years old. Full disclosure: there's a faint water stain on one arm and we have a cat, so allergic folks should pass. No smells, no bugs — just don't want to haul it. Covers zip off and wash.",
+      "hood": "Temescal",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T08:15",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T9": ">0.7",
+      "T12": "<0.4",
+      "verdict": "!REJECT"
+    }
+  },
+  {
+    "note": "LOGISTICS MUST NOT PUNISH — a piano failing T7/T10 should still score like a piano (Jev is right: free uprights are 'useful but unremarkable', not finds)",
+    "listing": {
+      "id": "p:piano",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "Upright piano, free — third floor walkup, you haul",
+      "body": "Kimball upright piano, holds tune reasonably (last tuned 2023). Free to whoever can move it — third floor, no elevator, you'll need a piano dolly and strong friends. Not splitting this up.",
+      "hood": "Adams Point",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T08:20",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "verdict": "!REJECT",
+      "T6": ">0.5"
+    }
+  },
+  {
+    "note": "GENERIC JUNK — a box of cables should score low even though it's free and easy",
+    "listing": {
+      "id": "p:cables",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "Box of assorted cables",
+      "body": "Clearing out a drawer: USB cables, old phone chargers, a couple of HDMI cables. Untested, take the whole box.",
+      "hood": "Fruitvale",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T08:25",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T5": "<0.5",
+      "T6": "<0.4",
+      "verdict": "REJECT"
+    }
+  },
+  {
+    "note": "VAGUE/EVASIVE — mystery box should read low honesty, middling desirability",
+    "listing": {
+      "id": "p:mystery",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "Mystery box lol",
+      "body": "Found this box in the garage, no idea what's in it honestly. Might be treasure, might be junk lol. Come grab it.",
+      "hood": "San Antonio",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T08:30",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T9": "<0.5",
+      "verdict": "REJECT"
+    }
+  },
+  {
+    "note": "BRAND VS CONDITION — chipped Le Creuset: T6 high, T3 should pull it down",
+    "listing": {
+      "id": "p:lecreuset",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "Le Creuset dutch oven — chipped enamel",
+      "body": "5.5qt Le Creuset round dutch oven in flame orange. Interior enamel has a chip the size of a quarter — still cooks fine, just not showroom. Free, porch pickup.",
+      "hood": "Piedmont Ave",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T08:35",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T6": ">0.6",
+      "T3": "<0.7",
+      "verdict": "!REJECT"
+    }
+  },
+  {
+    "note": "HEDGE CASE — 'untested' vintage synth: condition SHOULD be unsettled (watch T3 confidence)",
+    "listing": {
+      "id": "p:synth",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "Vintage synthesizer — untested, from estate cleanout",
+      "body": "Yamaha DX7 synthesizer from an estate cleanout. Powers on — display lights up — but I have no speakers to test sound, so untested beyond that. Cosmetically good. Free to a good home.",
+      "hood": "Montclair",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T08:40",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T6": ">0.6",
+      "T13": ">0.5"
+    }
+  },
+  {
+    "note": "HONEST BROKEN — dead MacBook 'for parts': disclosed defect must not T12-veto (T12 may read mid, but T9 saves it)",
+    "listing": {
+      "id": "p:mbparts",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "FOR PARTS: MacBook Pro 2019, dead logic board",
+      "body": "16-inch MacBook Pro 2019 — logic board is dead, confirmed by the shop. Screen, keyboard, battery, and aluminum body are all fine. Free to anyone who repairs or needs parts.",
+      "hood": "Jack London",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T08:45",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T3": "<0.5",
+      "T9": ">0.6",
+      "verdict": "!REJECT"
+    }
+  },
+  {
+    "note": "MOLD ADJACENT — 'dusty attic, musty smell' should trip T12 even though books are collectible",
+    "listing": {
+      "id": "p:atticbooks",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "Old book collection from the attic",
+      "body": "Boxes of old hardcovers from a relative's attic — some look like first editions. They've been up there 30 years; a bit musty smelling and dusty. Free, take all boxes.",
+      "hood": "Dimond",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T08:50",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "verdict": "REJECT",
+      "T13": ">0.4"
+    }
+  },
+  {
+    "note": "DISCLOSED DEFECT — flickering TV: honesty rewarded, condition penalized, T12 low",
+    "listing": {
+      "id": "p:flickertv",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "42\" TV — works, screen flickers occasionally",
+      "body": "Older 42 inch flat screen. Works fine 95% of the time but the screen flickers for a few seconds every so often — full disclosure, it might get worse. Free, first floor pickup.",
+      "hood": "West Oakland",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T08:55",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T9": ">0.6",
+      "T12": "<0.5"
+    }
+  },
+  {
+    "note": "ALL URGENCY NO ITEM — 'everything must go today' is hype, not treasure",
+    "listing": {
+      "id": "p:everything",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "MOVING SALE LEFTOVERS — everything free, TODAY ONLY",
+      "body": "Moving sale ended, everything left is free — random household stuff, some furniture, kitchen items. Come pick through it, it all goes to the dump tonight.",
+      "hood": "Laurel",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T09:00",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T8": ">0.7"
+    }
+  },
+  {
+    "note": "DISCLOSED DEFECT — brakes need adjusting is honest, not hidden; T12 should stay under the line",
+    "listing": {
+      "id": "p:bikebrakes",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "Trek hybrid bike — brakes need adjusting",
+      "body": "Trek 7.2 hybrid, rides well but I'll be upfront: the rear brake needs adjusting and there's surface rust on the chain. Otherwise solid — tires hold air. Free, porch pickup.",
+      "hood": "Temescal",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T09:05",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T12": "<0.4",
+      "T9": ">0.6",
+      "verdict": "!REJECT"
+    }
+  },
+  {
+    "note": "TRUE HAZARD — musty stored mattress should die on T12 AND taste veto",
+    "listing": {
+      "id": "p:mustymattress",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "Queen mattress — been in storage",
+      "body": "Queen mattress that's been in the garage for a couple years. A bit musty from storage, no stains I can see. Free to whoever wants to air it out.",
+      "hood": "Fruitvale",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T09:10",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T12": ">0.4",
+      "verdict": "REJECT"
+    }
+  },
+  {
+    "note": "EVASIVE + RISKY — unknown-condition garage pile: hazard AND low honesty should veto",
+    "listing": {
+      "id": "p:evasivepile",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "Garage stuff — take it all",
+      "body": "Bunch of stuff in the garage I need gone. Unknown condition on most of it, haven't looked through it. Take everything or nothing.",
+      "hood": "Elmhurst",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T09:15",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T12": ">0.5",
+      "verdict": "REJECT"
+    }
+  },
+  {
+    "note": "NICHE TREASURE — film camera: does T5 understand collector desirability?",
+    "listing": {
+      "id": "p:fm2",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "Nikon FM2 film camera with 50mm lens",
+      "body": "My dad's Nikon FM2 with the 50mm f/1.8. Shutter fires at all speeds, light meter works. He's stopped shooting film. Free to someone who'll actually use it.",
+      "hood": "North Berkeley",
+      "town": "Berkeley",
+      "postedAt": "2026-11-20T09:20",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T6": ">0.7",
+      "T13": ">0.5"
+    }
+  },
+  {
+    "note": "NICHE TREASURE — cast iron collectors' brand",
+    "listing": {
+      "id": "p:griswold",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "Old cast iron skillets — Griswold",
+      "body": "Three Griswold cast iron skillets from my grandmother's kitchen. Some surface rust but they'll reseason beautifully. Free.",
+      "hood": "Claremont",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T09:25",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T6": ">0.6",
+      "T5": ">0.4"
+    }
+  },
+  {
+    "note": "TASTE HIT — vinyl records are a saved want; T11 should rise",
+    "listing": {
+      "id": "p:vinyl",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "Jazz vinyl records — original pressings",
+      "body": "About 40 jazz LPs, mostly Blue Note and Prestige first pressings from the 60s. Sleeves worn but records play clean. Free to a collector, not for flipping.",
+      "hood": "Piedmont Ave",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T09:30",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T11": ">0.5",
+      "T13": ">0.5"
+    }
+  },
+  {
+    "note": "TASTE HIT — espresso gear is a saved want",
+    "listing": {
+      "id": "p:espresso",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "Gaggia Classic espresso machine",
+      "body": "Gaggia Classic Pro, about 5 years old. Works but needs a descale — shots pull a bit slow lately. Free, counter space won.",
+      "hood": "Rockridge",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T09:35",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T11": ">0.5",
+      "T6": ">0.5"
+    }
+  },
+  {
+    "note": "TASTE HIT — vintage lamp is literally the first saved want",
+    "listing": {
+      "id": "p:lamp",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "Vintage brass pharmacy lamp",
+      "body": "Adjustable brass pharmacy lamp, 1970s. Wiring works, some patina on the base which I think looks great. Free.",
+      "hood": "Montclair",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T09:40",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T11": ">0.5",
+      "verdict": "!REJECT"
+    }
+  },
+  {
+    "note": "TASTE VETO — 'particle board' is on the user's hard no list; T11 must zero",
+    "listing": {
+      "id": "p:particleboard",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "Particle board bookcase",
+      "body": "White particle board bookcase, some shelf sag in the middle. Sturdy enough for paperbacks. Free.",
+      "hood": "Dimond",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T09:45",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T11": "<0.05"
+    }
+  },
+  {
+    "note": "SCAM-ADJACENT LEGIT — a free iPhone that's actually real must NOT trip the pinned scam gate",
+    "listing": {
+      "id": "p:legitiphone",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "iPhone 12 — upgraded, giving the old one away",
+      "body": "iPhone 12, 128GB, battery health 81%, screen has light scratches but no cracks. I upgraded yesterday. Pickup only in person, first come first served — no shipping, no exceptions.",
+      "hood": "Grand Lake",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T09:50",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T2": "<0.9",
+      "verdict": "!REJECT"
+    }
+  },
+  {
+    "note": "HYPE NOT SCAM — caps-lock urgency is annoying, not fraud",
+    "listing": {
+      "id": "p:hype",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "FREE FREE FREE — MOVING TOMORROW EVERYTHING GOES",
+      "body": "LEAVING THE COUNTRY TOMORROW. Kitchen stuff, bookshelves, lamps, all FREE TODAY ONLY. Come take it ALL. First come first served!",
+      "hood": "Downtown",
+      "town": "Berkeley",
+      "postedAt": "2026-11-20T09:55",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T2": "<0.9",
+      "T8": ">0.7"
+    }
+  },
+  {
+    "note": "MASQUERADE — a service offer is not a free item; T1 should sink it",
+    "listing": {
+      "id": "p:service",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "Free rides to the dump this weekend",
+      "body": "I have a truck and I'm making a dump run Saturday. Happy to give anyone a ride along or help load your junk — free service, just helping out the neighborhood.",
+      "hood": "Laurel",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T10:00",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T1": "<0.6",
+      "verdict": "REJECT"
+    }
+  },
+  {
+    "note": "MASQUERADE — 'free advice' is content, not an item",
+    "listing": {
+      "id": "p:advice",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "Free advice: how to pack for a move",
+      "body": "Professional organizer here — posting my free guide to packing efficiently for a move. Tips on boxes, labeling, and what to purge first.",
+      "hood": "Piedmont",
+      "town": "Piedmont",
+      "postedAt": "2026-11-20T10:05",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T1": "<0.6",
+      "verdict": "REJECT"
+    }
+  },
+  {
+    "note": "EVASIVE — zero specifics; T9 must read the vagueness",
+    "listing": {
+      "id": "p:zerodetail",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "Stuff",
+      "body": "Got some stuff to give away. Come get it.",
+      "hood": "West Oakland",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T10:10",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T9": "<0.4",
+      "verdict": "REJECT"
+    }
+  },
+  {
+    "note": "EUPHEMISM — 'needs TLC' means broken; T3 should decode it",
+    "listing": {
+      "id": "p:tlc",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "Antique desk — needs TLC",
+      "body": "Beautiful old desk, has great bones but needs some TLC. Leg is loose, drawer sticks, finish is worn. Free to someone handy.",
+      "hood": "Adams Point",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T10:15",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T3": "<0.5",
+      "T9": ">0.5"
+    }
+  },
+  {
+    "note": "CONDITION CEILING — 'like new used twice' should max T3",
+    "listing": {
+      "id": "p:likenew",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "Instant Pot — like new, used twice",
+      "body": "Instant Pot Duo 6qt. Used literally twice before we realized we prefer the stovetop. Original box and all accessories. Like new.",
+      "hood": "Temescal",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T10:20",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T3": ">0.7",
+      "T9": ">0.6"
+    }
+  },
+  {
+    "note": "SELF-CONTRADICTION — claims solid oak then admits veneer; honesty AND taste-veto trip",
+    "listing": {
+      "id": "p:selfcontradict",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "Solid oak dresser — free",
+      "body": "Solid oak dresser, great condition. Well — actually it's oak veneer over particle board, but it looks really nice. Drawers all work.",
+      "hood": "North Oakland",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T10:25",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T11": "<0.05"
+    }
+  },
+  {
+    "note": "HAZARD-ADJACENT — dust is not mold; 'sitting on a shelf' must stay under the line",
+    "listing": {
+      "id": "p:dustybooks",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "Boxes of hardcover books — dusty",
+      "body": "Several boxes of hardcover novels and nonfiction, dusty from sitting on the shelf. No water damage, no smells — just needs a wipe-down. Free.",
+      "hood": "Rockridge",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T11:00",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T12": "<0.6",
+      "verdict": "!REJECT"
+    }
+  },
+  {
+    "note": "HAZARD-ADJACENT — the user's case: a mystery box OF BOOKS is a surprise, not a pest risk",
+    "listing": {
+      "id": "p:mysterybooks",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "Mystery box of books — genre surprise",
+      "body": "Sealed box of books from my book club — I'm not telling you the genres, it's a surprise. All in good readable condition. Free to a reader.",
+      "hood": "Temescal",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T11:00",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T12": "<0.6",
+      "verdict": "!REJECT"
+    }
+  },
+  {
+    "note": "DISCLAIMER — 'no bedbugs, no pets, no smoke' should read CLEAN, not suspicious",
+    "listing": {
+      "id": "p:pestpromise",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "Couch — no bedbugs, no pets, no smoke",
+      "body": "Gray fabric couch, about 6 years old. For the record: no bedbugs ever, no pets, non-smoking home. Some seat cushion sag. Free, first floor.",
+      "hood": "Grand Lake",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T11:00",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T12": "<0.5",
+      "verdict": "!REJECT"
+    }
+  },
+  {
+    "note": "NEGATION — 'smoke-free pet-free' contains the words but means the opposite",
+    "listing": {
+      "id": "p:smokefree",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "Baby clothes lot — smoke-free, pet-free home",
+      "body": "Bag of 6-12 month baby clothes, washed and folded. From a smoke-free, pet-free home. Free.",
+      "hood": "Dimond",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T11:00",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T12": "<0.4",
+      "verdict": "!REJECT"
+    }
+  },
+  {
+    "note": "STORAGE CONTEXT — a dry workshop basement is not a mold farm",
+    "listing": {
+      "id": "p:basementtools",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "Hand tools from basement workshop",
+      "body": "Assorted hand tools — wrenches, screwdrivers, a hand drill. Kept in my dry basement workshop, all working, some wear. Free, take the bin.",
+      "hood": "West Oakland",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T11:00",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T12": "<0.5",
+      "verdict": "!REJECT"
+    }
+  },
+  {
+    "note": "STORAGE CONTEXT — bagged+boarded comics in a dry attic: collector care, not mold",
+    "listing": {
+      "id": "p:atticclean",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "Comic books — bagged and boarded, attic-stored",
+      "body": "Long box of comics, all bagged and boarded. Stored in the attic but dry and sealed — I'm a collector, they're protected. Free to a reader, not a flipper.",
+      "hood": "Piedmont Ave",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T11:00",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T12": "<0.6",
+      "verdict": "!REJECT"
+    }
+  },
+  {
+    "note": "AMBIGUOUS SMELL — 'vintage store smell' is must-adjacent; where does T12 land?",
+    "listing": {
+      "id": "p:vintagesmell",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "Vintage wool coats",
+      "body": "Three vintage wool coats from the 70s. They have that vintage store smell — airing them out fixes it. No holes, linings intact. Free.",
+      "hood": "Elmwood",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T11:00",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T12": "<0.6",
+      "verdict": "!REJECT"
+    }
+  },
+  {
+    "note": "STORAGE CONTEXT — 'garage-kept' clean camping gear",
+    "listing": {
+      "id": "p:garagekept",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "Camping gear — garage kept",
+      "body": "Two sleeping bags and a camp stove, always stored in the garage, clean and working. Free.",
+      "hood": "Montclair",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T11:00",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T12": "<0.5",
+      "verdict": "!REJECT"
+    }
+  },
+  {
+    "note": "DISCLAIMER + RISK-ADJACENT — wool rug (moth-adjacent) from pet-free home, vacuumed",
+    "listing": {
+      "id": "p:rugguard",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "Wool area rug — vacuumed, pet-free home",
+      "body": "8x10 wool area rug, deep vacuumed and rolled. No pets in the house, no stains. Heavy — bring a friend. Free.",
+      "hood": "Claremont",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T11:00",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T12": "<0.6",
+      "verdict": "!REJECT"
+    }
+  },
+  {
+    "note": "STORAGE CONTEXT — garment-bagged designer clothes",
+    "listing": {
+      "id": "p:closetcleanout",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "Designer clothes — garment bagged, closet cleanout",
+      "body": "Rack of designer pieces (Theory, Vince), all in garment bags. Closet cleanout — excellent condition. Free to someone who'll wear them.",
+      "hood": "Piedmont",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T11:00",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T12": "<0.5",
+      "verdict": "!REJECT"
+    }
+  },
+  {
+    "note": "REAL HAZARD CONTROL — landlord hedging on roaches; egregious T12 vetoes even when honestly disclosed",
+    "listing": {
+      "id": "p:roachhint",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "Apartment cleanout furniture",
+      "body": "Couch, table, and dresser free from a unit cleanout. Landlord says there are no bugs but the building has had roach issues this year. Take it all.",
+      "hood": "Fruitvale",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T11:00",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T12": ">0.6",
+      "verdict": "REJECT"
+    }
+  },
+  {
+    "note": "REAL HAZARD CONTROL — flooded-basement furniture is mold by another name",
+    "listing": {
+      "id": "p:wetbasement",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "Furniture from flooded basement — mostly dried",
+      "body": "Couch and shelves from our basement flood last month. Mostly dried out now, some water lines visible. Free if you can haul it.",
+      "hood": "San Antonio",
+      "town": "Oakland",
+      "postedAt": "2026-11-20T11:00",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T12": ">0.6",
+      "verdict": "REJECT"
+    }
+  },
+  {
+    "note": "PRISTINE TRIVIA — real hangers case: flawless condition + honest giver must NOT alert; the find gate demotes to DIGEST",
+    "listing": {
+      "id": "p:hangers",
+      "source": "freecycle",
+      "status": "OFFER",
+      "title": "Four silver stocking hangers",
+      "body": "Set of four silver-tone stocking hangers for the mantel. Used only once last Christmas, like new. Free to a good home.",
+      "hood": "Concord",
+      "town": "Concord",
+      "postedAt": "2026-11-20T11:00",
+      "url": "",
+      "images": [
+        "https://images.freecycle.org/posts/images/33291448"
+      ]
+    },
+    "expect": {
+      "T3": ">0.6",
+      "T13": "<0.5",
+      "verdict": "DIGEST"
+    }
+  }
+]

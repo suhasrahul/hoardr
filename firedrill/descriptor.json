@@ -1,0 +1,62 @@
+{
+  "schema": "firedrill.local-descriptor.v1",
+  "source_roots": [
+    { "alias": "app", "identity_sha256": "b221a6a7b6fd968cff838aa706e43b3447b5bddb83bae9102a75fd1109c5f4f7" }
+  ],
+  "services": [
+    {
+      "alias": "web",
+      "root_alias": "app",
+      "role": "agent",
+      "depends_on": [],
+      "configuration": [
+        { "name": "GIVER_INVOKE_URL", "phase": "runtime", "secret": false, "required": true },
+        { "name": "AI_GATEWAY_API_KEY", "phase": "runtime", "secret": true, "required": false },
+        { "name": "COGNEE_URL", "phase": "runtime", "secret": false, "required": false },
+        { "name": "COGNEE_TENANT_ID", "phase": "runtime", "secret": false, "required": false },
+        { "name": "COGNEE_API_KEY", "phase": "runtime", "secret": true, "required": false },
+        { "name": "SINGLESTORE_HOST", "phase": "runtime", "secret": false, "required": false },
+        { "name": "SINGLESTORE_PORT", "phase": "runtime", "secret": false, "required": false },
+        { "name": "SINGLESTORE_USER", "phase": "runtime", "secret": false, "required": false },
+        { "name": "SINGLESTORE_PASSWORD", "phase": "runtime", "secret": true, "required": false },
+        { "name": "SINGLESTORE_DB", "phase": "runtime", "secret": false, "required": false }
+      ]
+    }
+  ],
+  "entry_service": "web",
+  "driver": {
+    "profile": "http.v1",
+    "adapter_sha256": "beca6b726a5e7cf06e5ccc7648af3126646ca2a2aa1993bf05ab16452a7ca423",
+    "authentication": "anonymous",
+    "state_domains": ["proc", "data"]
+  },
+  "state_domains": [
+    {
+      "alias": "proc",
+      "service_alias": "web",
+      "kind": "process",
+      "location": "local",
+      "reset": "fresh-process",
+      "concurrency": "independent",
+      "hook_sha256": null
+    },
+    {
+      "alias": "data",
+      "service_alias": "web",
+      "kind": "database",
+      "location": "observation-only",
+      "reset": "unavailable",
+      "concurrency": "serial",
+      "hook_sha256": null
+    }
+  ],
+  "dependencies": [
+    {
+      "alias": "giver",
+      "service_alias": "web",
+      "protocol": "http",
+      "mode": "synthetic",
+      "operations": ["messages.send", "messages.list"]
+    }
+  ]
+}

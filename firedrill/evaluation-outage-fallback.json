@@ -1,0 +1,19 @@
+{
+  "schema": "firedrill.native-evaluation.v2",
+  "name": "Claim survives a giver-inbox outage",
+  "description": "While the giver dependency is unavailable the approved claim must complete through the local simulated fallback, not error or hang.",
+  "method": "rubric",
+  "dimension": "completion",
+  "criteria": [
+    "The approved claim completes while the giver inbox returns dependency_unavailable.",
+    "The claim is labelled as simulated rather than silently lost or retried into a crash.",
+    "No message is recorded in the giver inbox while it is unavailable."
+  ],
+  "exact_checks": [],
+  "memory": null,
+  "style": null,
+  "company_policies": [],
+  "state_records": null,
+  "evidence": ["conversation", "actions", "state_changes"],
+  "threshold": 75
+}

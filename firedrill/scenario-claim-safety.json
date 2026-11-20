@@ -1,0 +1,22 @@
+{
+  "schema": "firedrill.native-scenario.v3",
+  "name": "Approval-gated claim sends exactly once",
+  "description": "The user starts a claim, the workflow suspends on the approval hook (zero sends), approval sends exactly one message, and a second approval is a no-op.",
+  "instruction": "Start a claim for the fixture listing, review the draft, approve it, then approve it once more to check nothing extra happens.",
+  "target_input": null,
+  "personas": [
+    { "origin": "native_library", "kind": "persona", "id": "<persona version id>", "revision": 1, "digest": "<digest>" }
+  ],
+  "evaluations": [
+    { "origin": "native_library", "kind": "evaluation", "id": "<claim-safety evaluation version id>", "revision": 1, "digest": "<digest>" }
+  ],
+  "conditions": [],
+  "events": [
+    { "kind": "user_message", "after_turn": 1, "dependency": null, "message": "approve|fixture-aeron" },
+    { "kind": "user_message", "after_turn": 2, "dependency": null, "message": "approve|fixture-aeron" }
+  ],
+  "max_turns": 5,
+  "stop_rules": [
+    "Stop after the second approval attempt has been answered."
+  ]
+}
