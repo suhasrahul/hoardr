@@ -1,6 +1,6 @@
 .main {
   min-height: 100vh;
-  max-width: 1180px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 20px 24px 48px;
 }
@@ -338,6 +338,7 @@
   display: flex;
   gap: 6px;
   margin-bottom: 8px;
+  min-height: 52px;
 }
 
 .thumbs img {
@@ -355,7 +356,6 @@
 }
 
 .empty {
-  border: 3px dashed var(--muted);
   border-radius: 20px;
   padding: 52px 20px;
   text-align: center;
@@ -469,7 +469,6 @@
   bottom: 0;
   width: 150px;
   min-height: 130px;
-  border: 3px dashed var(--muted);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -1023,17 +1022,6 @@
   margin-top: 4px;
 }
 
-.stripLabel {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 12px;
-  margin-top: 8px;
-  color: #6b6353;
-}
-
 /* ---------- review grid (find cards) ---------- */
 
 .review {
@@ -1281,27 +1269,48 @@
 
 .disclosure {
   min-width: 0;
-  border: 2px solid var(--ink);
-  border-radius: 12px;
-  background: var(--card);
-}
-
-.maybeDisclosure {
-  background: #f2edff;
 }
 
 .disclosure summary {
-  padding: 12px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 0;
   min-height: 44px;
   font-family: var(--font-display);
   font-weight: 800;
   cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
-.disclosure > .hud,
-.disclosure > .stripWrap,
+.disclosure summary::after {
+  content: "▾";
+}
+
+.disclosure[open] summary::after {
+  content: "▴";
+}
+
 .disclosure > .dlg {
-  margin: 4px 14px 16px;
+  margin: 8px 0 0;
+}
+
+/* end-screen pile nav — chips open the pile browser dialog */
+.pileNav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.navChip {
+  min-height: 48px;
+  padding: 8px 18px;
+  font-size: 15px;
+}
+
+.navChipGrape {
+  background: var(--grape);
 }
 
 .whyCard {
@@ -1383,18 +1392,6 @@
   border: 3px solid var(--ink);
   border-radius: 10px;
   padding: 0 8px;
-}
-
-.detailsBtn {
-  margin-top: 8px;
-  background: none;
-  border: none;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: #6b6353;
-  cursor: pointer;
-  text-decoration: underline;
-  padding: 0;
 }
 
 .legend {
@@ -1495,6 +1492,23 @@
 
 @media (prefers-reduced-motion: reduce) {
   .liveDot { animation: none; }
+}
+
+/* image slots — reserve the same box when a listing has no photo so cards never shift */
+.imgSlot {
+  border: 0;
+  background: rgba(27, 27, 27, 0.03);
+}
+
+.miniImgPh {
+  height: 52px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  background: rgba(27, 27, 27, 0.03);
+}
+
+.fan .miniImgPh {
+  height: 40px;
 }
 
 /* Jev resale-estimate chip on every card */
