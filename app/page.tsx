@@ -196,15 +196,6 @@ const dec = (s: string) =>
     return NAMED_ENTITIES[e.toLowerCase()] ?? m;
   });
 
-// Word-boundary clip for chips — never cut mid-word.
-const clip = (s: string, n: number) => {
-  const d = dec(s);
-  if (d.length <= n) return d;
-  const cut = d.slice(0, n);
-  const sp = cut.lastIndexOf(" ");
-  return (sp > n * 0.5 ? cut.slice(0, sp) : cut).trimEnd() + "…";
-};
-
 const normTitle = (s: string) => dec(s).toLowerCase().replace(/[^a-z0-9]+/g, "");
 // The corpus has same-title dupes — hide repeats (dedupe misses them).
 const uniqByTitle = <T extends { title: string }>(arr: T[]) => {
@@ -289,7 +280,6 @@ export default function Dashboard() {
   const live = true; // always scan the live Trash Nothing feed (server falls back to saved listings if it fails)
   const [meta, setMeta] = useState<string | null>(null);
   const [feed, setFeed] = useState<"live" | "replay" | null>(null);
-  const [showDetails, setShowDetails] = useState(false);
   const [preview, setPreview] = useState<string | null>(null);
   const [note, setNote] = useState<string | null>(null);
   const [scanned, setScanned] = useState(0);
@@ -527,7 +517,6 @@ export default function Dashboard() {
   const spreadCards = spread === "junk" ? junk : spread === "maybe" ? maybe : keeps;
   const spreadLabel = spread === "junk" ? "Tossed" : spread === "maybe" ? "Maybe" : "Kept";
   const junkStack = junk.slice(-7);
-  const lastCard = strip[strip.length - 1]?.card ?? null;
   const noListings = feed !== null && total === 0;
 
   // goblin mood — flash wins, then eye > sniff > dig > done > idle
@@ -556,7 +545,7 @@ export default function Dashboard() {
         onClick={() => inspectCard(c)}
         title="why?"
       >
-        {c.images[0] && <img src={c.images[0]} alt="" onError={(e) => { e.currentTarget.style.display = "none"; }} />}
+        {c.images[0] ? <img src={c.images[0]} alt="" onError={(e) => { e.currentTarget.style.visibility = "hidden"; }} /> : <div className={css.miniImgPh} aria-hidden />}
         <div className={css.miniTitle}>{c.title}</div>
         {priceChip(c.value)}
         {stampOf(c) && !muted && (
@@ -598,7 +587,7 @@ export default function Dashboard() {
       disabled={running}
       whileTap={{ scale: 0.93, y: 3 }}
     >
-      {running ? "⛏️ DIGGING…" : feed ? "Scan again" : "🚀 GO FIND TREASURE"}
+      {running ? "DIGGING…" : feed ? "Scan again" : "GO FIND TREASURE"}
     </motion.button>
   );
 
@@ -637,20 +626,16 @@ export default function Dashboard() {
           />
         ))}
       </div>
-      <div className={css.stripLabel}>
-        <span>
-          {total ? `${strip.length} / ${total} sorted` : `${strip.length} sorted`}
-          {lastCard ? ` — last: ${stampOf(lastCard)} ${clip(lastCard.title, 22)}` : ""}
-        </span>
-      </div>
-      <div className={css.legend} aria-label="progress bar colors">
-        {LEGEND.map((l) => (
-          <span key={l.seg} className={css.legendItem}>
-            <span className={`${css.legendSwatch} ${css[l.seg]}`} />
-            {l.label}
-          </span>
-        ))}
-      </div>
+      {roundComplete && (
+        <div className={css.legend} aria-label="progress bar colors">
+          {LEGEND.map((l) => (
+            <span key={l.seg} className={css.legendItem}>
+              <span className={`${css.legendSwatch} ${css[l.seg]}`} />
+              {l.label}
+            </span>
+          ))}
+        </div>
+      )}
     </div>
   );
 
@@ -674,14 +659,6 @@ export default function Dashboard() {
                 : noListings ? "Checking the pile…"
                 : <><b>{scanned} / {total}</b> scanned · <b className={css.headlineKept}>{keeps.length}</b> kept</>}
             </h1>
-            {!roundComplete && (
-              <>
-                <button type="button" className={css.detailsBtn} onClick={() => setShowDetails((v) => !v)} aria-expanded={showDetails}>
-                  details {showDetails ? "▴" : "▾"}
-                </button>
-                {showDetails && <div className={css.hud}>{meta}</div>}
-              </>
-            )}
           </>
         )}
       </header>
@@ -690,16 +667,17 @@ export default function Dashboard() {
 
       {!feed && (
         <section className={css.welcome}>
-          <h1>I dig through free listings so you don&apos;t have to.</h1>
+          <h1>I find free stuff you didn&apos;t know you absolutely needed.</h1>
           {scanButton}
           {running && <p className={css.source} role="status">Getting the live listings…</p>}
         </section>
       )}
 
-      {roundComplete && !keeps.length && !noListings && (
+      {roundComplete && (
         <p className={css.summary}>
-          I checked {scanned} {scanned === 1 ? "listing" : "listings"}.
-          {maybe.length > 0 ? " There are a few maybes to look through." : " Nothing made the cut."}
+          {noListings
+            ? "Nothing new landed in the pile — try the live feed or scan again later."
+            : `I looked at ${scanned} ${scanned === 1 ? "thing" : "things"} so you didn't have to — ${keeps.length} kept, ${maybe.length} maybe, ${junk.length} tossed.`}
         </p>
       )}
 
@@ -707,7 +685,7 @@ export default function Dashboard() {
       <div className={`${css.stage} ${flash === "kill" ? css.stageShake : ""}`}>
         <section className={`${css.pile} ${css.pileJunk}`} aria-label={`junk pile, ${junk.length} tossed`}>
           <button type="button" className={`${css.chip} ${css.pileChip} ${css.chipBtn}`} onClick={() => setSpread("junk")} disabled={!junk.length}>
-            🗑 {junk.length} tossed
+            {junk.length} tossed
           </button>
           {sorted ? (
             <div className={css.fan}>
@@ -739,14 +717,12 @@ export default function Dashboard() {
               animate={{ scale: 1, opacity: 1, rotate: -1, y: 0 }}
               transition={SPRING_POP}
             >
-              {hot.images[0] && <img className={css.hotImg} src={hot.images[0]} alt="" onError={(e) => { e.currentTarget.style.display = "none"; }} />}
-              {hot.images.length > 1 && (
-                <div className={css.thumbs}>
-                  {hot.images.slice(1).map((src, i) => (
-                    <img key={i} src={src} alt="" className={hot.eye === "running" ? css.thumbEye : undefined} />
-                  ))}
-                </div>
-              )}
+              {hot.images[0] ? <img className={css.hotImg} src={hot.images[0]} alt="" onError={(e) => { e.currentTarget.style.visibility = "hidden"; }} /> : <div className={`${css.hotImg} ${css.imgSlot}`} aria-hidden />}
+              <div className={css.thumbs}>
+                {hot.images.slice(1).map((src, i) => (
+                  <img key={i} src={src} alt="" className={hot.eye === "running" ? css.thumbEye : undefined} />
+                ))}
+              </div>
               <div className={css.cTitle}>
                 {hot.url ? <a href={hot.url} target="_blank" rel="noreferrer">{hot.title}</a> : hot.title}
               </div>
@@ -771,7 +747,7 @@ export default function Dashboard() {
 
           <div className={css.tray} aria-label={`maybe tray, ${maybe.length}`}>
             <button type="button" className={`${css.trayLabel} ${css.chipBtn}`} disabled={!maybe.length} onClick={() => setSpread("maybe")}>
-              🤔 {maybe.length} maybe {maybe.length > 0 && "↗"}
+              {maybe.length} maybe {maybe.length > 0 && "↗"}
             </button>
             {maybe.slice(-3).map((c) => (
               <motion.button
@@ -798,7 +774,7 @@ export default function Dashboard() {
             aria-expanded={review}
             disabled={!keeps.length}
           >
-            ⭐ {keeps.length} kept
+            {keeps.length} kept
           </button>
           {flash === "keep" && (
             <motion.div className={css.keeperToast} initial={{ y: 14, opacity: 0, scale: 0.6 }} animate={{ y: 0, opacity: 1, scale: 1 }} transition={SPRING_POP}>
@@ -819,7 +795,7 @@ export default function Dashboard() {
       </div>
       )}
 
-      {!roundComplete && progress}
+      {progress}
       {spread && (
         <BrowseDialog className={css.spreadPanel} titleId="pile-browser-title" onDismiss={() => setSpread(null)}>
           <div className={css.browserHeader}>
@@ -975,17 +951,19 @@ export default function Dashboard() {
       )}
       {roundComplete && (
         <div className={css.resultExtras}>
-          {maybe.length > 0 && (
-            <details className={`${css.disclosure} ${css.maybeDisclosure}`}>
-              <summary>{keeps.length ? "Maybe" : "Review maybes"} <span className={css.browserCount}>{maybe.length}</span></summary>
-              {browseCards(maybe)}
-            </details>
-          )}
-          {junk.length > 0 && (
-            <details className={css.disclosure}>
-              <summary>Tossed <span className={css.browserCount}>{junk.length}</span></summary>
-              {browseCards(junk)}
-            </details>
+          {(maybe.length > 0 || junk.length > 0) && (
+            <div className={css.pileNav}>
+              {maybe.length > 0 && (
+                <button type="button" className={`${css.chip} ${css.chipBtn} ${css.navChip} ${keeps.length ? "" : css.navChipGrape}`} onClick={() => setSpread("maybe")}>
+                  {maybe.length} maybe{keeps.length ? "" : " — worth a peek"} →
+                </button>
+              )}
+              {junk.length > 0 && (
+                <button type="button" className={`${css.chip} ${css.chipBtn} ${css.navChip}`} onClick={() => setSpread("junk")}>
+                  {junk.length} tossed →
+                </button>
+              )}
+            </div>
           )}
           {chat && (
             <details ref={chatDisclosure} className={css.disclosure}>
@@ -1021,11 +999,7 @@ export default function Dashboard() {
               </div>
             </details>
           )}
-          <details className={css.disclosure}>
-            <summary>Run details</summary>
-            {meta && <p className={css.hud}>{meta}</p>}
-            {progress}
-          </details>
+          {meta && <p className={css.hud}>{meta}</p>}
         </div>
       )}
       <div className={css.credit}>raccoon art: OpenMoji · CC BY-SA</div>
