@@ -4,7 +4,7 @@
 
 # HOARDR
 
-### *I dig through free listings so you don't have to.* 🦝
+### *I find free stuff you didn't know you absolutely needed.* 🦝
 
 ![LIVE](https://img.shields.io/badge/●_LIVE-Trash_Nothing_feed-ff6b57?style=for-the-badge&labelColor=1b1b1b)
 ![Judge](https://img.shields.io/badge/judge-Jev-5ce1a0?style=for-the-badge&labelColor=1b1b1b)
